@@ -80,9 +80,9 @@ export default class Tipusok extends React.Component {
             onRequestClose={() => {
               
             }}>
-          <View style = {styles.modal} /* Modal Törzse */>
+          <View style = {{backgroundColor:"#40E0D0"}} /* Modal Törzse */>
 
-          <Text>{this.state.konyvdata.leiras_konyv}</Text>
+          <Text >{this.state.konyvdata.leiras_konyv}</Text>
 
         
           </View>
@@ -110,7 +110,7 @@ export default class Tipusok extends React.Component {
               this.setState({konyvdata:item})
 
               }}>
-          <Image  source={{uri: 'http://192.168.2.105:3000/'+item.konyv_kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />    
+          <Image  source={{uri:'http://192.168.2.105:3000/'+item.konyv_kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />    
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   },
   closeText: {
     fontSize: 24,
-    color: '#00479e',
+    color: 'pink',
     marginTop:'auto',
   },
   container2: {
@@ -152,12 +152,14 @@ const styles = StyleSheet.create({
     marginTop:'auto',
     alignSelf:'center',
     marginBottom:50,
+    backgroundColor: 'pink'
   },
   modal: {
     fontSize: 24,
     color: '#00479e',
     marginTop:100,
     textAlign: 'center',
+    backgroundColor:'#40E0D0'
   },
   button: {
     display: 'flex',
