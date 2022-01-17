@@ -1,20 +1,19 @@
+import * as React from 'react';
 import { Button, View } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-import Konyvek from './konyvek';
-import Konyv from './konyv'
-import Konyvek from './konyvek';
+import Tipusok from "./Tipusok"
+import Konyv from "./Konyv"
 
-function Konyvlap({ navigation }) {
+function Tipuslap({ navigation }) {
   return (
-    <Konyvek/>
+   <Tipusok />
   );
 }
 
-
-function konyv({ navigation }) {
+function NotificationsScreen({ navigation }) {
   return (
-    <konyv/>
+    <Konyv />
   );
 }
 
@@ -23,9 +22,9 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Konyvek" component={Konyvek} />
-        <Drawer.Screen name="konyv" component={konyv} />
+      <Drawer.Navigator initialRouteName="Könyvek">
+        <Drawer.Screen name="Tipusok" component={Tipuslap} />
+        <Drawer.Screen name="Könyvek" component={NotificationsScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
