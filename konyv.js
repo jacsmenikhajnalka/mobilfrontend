@@ -2,6 +2,8 @@ import React from 'react';
 import {StyleSheet, FlatList, ActivityIndicator, Text, View, Image , TouchableOpacity , Modal} from 'react-native';
 import { color } from 'react-native-reanimated';
 
+const ipcim="localhost";
+
 export default class Tipusok extends React.Component {
 
   constructor(props){
@@ -16,12 +18,12 @@ export default class Tipusok extends React.Component {
   }
 
   szavazat=(szam)=>{
-    //alert(szam)
+    alert(szam)
     var bemenet={
       bevitel1:szam
     }
 
-  fetch("http://192.168.2.105:3000/szavazatfelvitel", {
+  fetch('http://'+ipcim+':3000/szavazatfelvitel',{
       method: "POST",
       body: JSON.stringify(bemenet),
       headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -37,7 +39,7 @@ export default class Tipusok extends React.Component {
   componentDidMount(){
     alert("hello")
     
-    return fetch('http://192.168.2.105:3000/konyv')
+    return fetch('http://'+ipcim+':3000/konyv')
       .then((response) => response.json())
       .then((responseJson) => {
 
@@ -110,12 +112,12 @@ export default class Tipusok extends React.Component {
               this.setState({konyvdata:item})
 
               }}>
-          <Image  source={{uri:'http://192.168.2.105:3000/'+item.konyv_kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />    
+          <Image  source={{uri:'http://'+ipcim+':3000/'+item.konyv_kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />    
           </TouchableOpacity>
 
           <TouchableOpacity
         style={styles.kekgomb}
-        onPress={async ()=>this.szavazat(item.film_id)}
+        onPress={async ()=>this.szavazat(item.konyv_id)}
       >
         <Text style={{color:"grey",fontWeight:"bold",fontSize:20}}  >Erre szavazok</Text>
       </TouchableOpacity>
@@ -143,7 +145,7 @@ const styles = StyleSheet.create({
   },
   closeText: {
     fontSize: 24,
-    color: 'pink',
+    color: 'purple',
     marginTop:'auto',
   },
   container2: {
@@ -152,7 +154,7 @@ const styles = StyleSheet.create({
     marginTop:'auto',
     alignSelf:'center',
     marginBottom:50,
-    backgroundColor: 'pink'
+    backgroundColor: 'white'
   },
   modal: {
     fontSize: 24,

@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, FlatList, ActivityIndicator, Text, View, Image , TouchableOpacity } from 'react-native';
 
+const ipcim="192.168.1.118";
 export default class Tipusok extends React.Component {
 
   constructor(props){
@@ -18,7 +19,7 @@ export default class Tipusok extends React.Component {
       bevitel1:szam
     }
 
-  fetch("http://192.168.2.105:3000/szavazatfelvitel", {
+  fetch('http://'+ipcim+':3000/szavazatfelvitel', {
       method: "POST",
       body: JSON.stringify(bemenet),
       headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -34,7 +35,7 @@ export default class Tipusok extends React.Component {
   componentDidMount(){
     alert("hello")
     
-    return fetch('http://192.168.2.105:3000/konyv_fajtai')
+    return fetch('http://'+ipcim+':3000/konyv_fajtai')
       .then((response) => response.json())
       .then((responseJson) => {
 
@@ -74,11 +75,11 @@ export default class Tipusok extends React.Component {
 
           <Text style={{color:"purple",fontSize:26,textAlign:"center",marginTop:5,marginBottom:5}}   >{item.kony_fajtai} </Text>
         
-          <Image source={{uri: 'http://192.168.2.105:3000/'+item.konyvfajta_kepek}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />  
+          <Image source={{uri: 'http://'+ipcim+':3000/'+item.konyvfajta_kepek}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />  
 
           <TouchableOpacity
         style={styles.kekgomb}
-        onPress={async ()=>this.szavazat(item.film_id)}
+        onPress={async ()=>this.szavazat(item.szavazo_ertek)}
       >
         <Text style={{color:"white",fontWeight:"bold",fontSize:15}}  >Erre szavazok</Text>
       </TouchableOpacity>
