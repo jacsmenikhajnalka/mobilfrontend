@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, FlatList, ActivityIndicator, Text, View, Image , TouchableOpacity , Modal} from 'react-native';
 import { color } from 'react-native-reanimated';
 
-const ipcim="localhost";
+const ipcim="192.168.1.118";
 
 export default class Tipusok extends React.Component {
 
@@ -34,7 +34,91 @@ export default class Tipusok extends React.Component {
   .then(y => alert(y));
 
   }
+  szavazat=(szam)=>{
+    alert(szam)
+    var bemenet={
+      bevitel1:szam
+    }
 
+  fetch('http://'+ipcim+':3000/szavazatfelvitel2',{
+      method: "POST",
+      body: JSON.stringify(bemenet),
+      headers: {"Content-type": "application/json; charset=UTF-8"}
+    }
+  
+  )
+  .then(x => x.text())
+  .then(y => alert(y));
+
+  }
+  szavazat=(szam)=>{
+    alert(szam)
+    var bemenet={
+      bevitel1:szam
+    }
+
+  fetch('http://'+ipcim+':3000/szavazatfelvitel3',{
+      method: "POST",
+      body: JSON.stringify(bemenet),
+      headers: {"Content-type": "application/json; charset=UTF-8"}
+    }
+  
+  )
+  .then(x => x.text())
+  .then(y => alert(y));
+
+  }
+  szavazat=(szam)=>{
+    alert(szam)
+    var bemenet={
+      bevitel1:szam
+    }
+
+  fetch('http://'+ipcim+':3000/szavazatfelvitel4',{
+      method: "POST",
+      body: JSON.stringify(bemenet),
+      headers: {"Content-type": "application/json; charset=UTF-8"}
+    }
+  
+  )
+  .then(x => x.text())
+  .then(y => alert(y));
+
+  }
+  szavazat=(szam)=>{
+    alert(szam)
+    var bemenet={
+      bevitel1:szam
+    }
+
+  fetch('http://'+ipcim+':3000/szavazatfelvitel5',{
+      method: "POST",
+      body: JSON.stringify(bemenet),
+      headers: {"Content-type": "application/json; charset=UTF-8"}
+    }
+  
+  )
+  .then(x => x.text())
+  .then(y => alert(y));
+
+  }
+  szavazat=(szam)=>{
+    alert(szam)
+    var bemenet={
+      bevitel1:szam
+    }
+
+  fetch('http://'+ipcim+':3000/szavazatfelvitel6',{
+      method: "POST",
+      body: JSON.stringify(bemenet),
+      headers: {"Content-type": "application/json; charset=UTF-8"}
+    }
+  
+  )
+  .then(x => x.text())
+  .then(y => alert(y));
+
+  }
 
   componentDidMount(){
     alert("hello")
