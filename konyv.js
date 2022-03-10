@@ -34,7 +34,7 @@ export default class Tipusok extends React.Component {
   .then(y => alert(y));
 
   }
-  szavazat=(szam)=>{
+  szavazat2=(szam)=>{
     alert(szam)
     var bemenet={
       bevitel1:szam
@@ -51,7 +51,7 @@ export default class Tipusok extends React.Component {
   .then(y => alert(y));
 
   }
-  szavazat=(szam)=>{
+  szavazat3=(szam)=>{
     alert(szam)
     var bemenet={
       bevitel1:szam
@@ -68,7 +68,7 @@ export default class Tipusok extends React.Component {
   .then(y => alert(y));
 
   }
-  szavazat=(szam)=>{
+  szavazat4=(szam)=>{
     alert(szam)
     var bemenet={
       bevitel1:szam
@@ -85,7 +85,7 @@ export default class Tipusok extends React.Component {
   .then(y => alert(y));
 
   }
-  szavazat=(szam)=>{
+  szavazat5=(szam)=>{
     alert(szam)
     var bemenet={
       bevitel1:szam
@@ -102,7 +102,7 @@ export default class Tipusok extends React.Component {
   .then(y => alert(y));
 
   }
-  szavazat=(szam)=>{
+  szavazat6=(szam)=>{
     alert(szam)
     var bemenet={
       bevitel1:szam
