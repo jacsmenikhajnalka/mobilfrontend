@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, FlatList, ActivityIndicator, Text, View, Image , TouchableOpacity } from 'react-native';
 
-const ipcim="192.168.1.118";
+const ipcim="192.168.1.207";
 export default class Tipusok extends React.Component {
 
   constructor(props){
@@ -33,7 +33,7 @@ export default class Tipusok extends React.Component {
 
 
   componentDidMount(){
-    alert("hello")
+    //alert("hello")
     
     return fetch('http://'+ipcim+':3000/konyv_fajtai')
       .then((response) => response.json())
@@ -45,7 +45,7 @@ export default class Tipusok extends React.Component {
         }, function(){
 
         });
-        alert(JSON.stringify(this.state.dataSource))
+       // alert(JSON.stringify(this.state.dataSource))
       })
       .catch((error) =>{
         console.error(error);
@@ -77,12 +77,7 @@ export default class Tipusok extends React.Component {
         
           <Image source={{uri: 'http://'+ipcim+':3000/'+item.konyvfajta_kepek}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />  
 
-          <TouchableOpacity
-        style={styles.kekgomb}
-        onPress={async ()=>this.szavazat(item.szavazo_ertek)}
-      >
-        <Text style={{color:"white",fontWeight:"bold",fontSize:15}}  >Erre szavazok</Text>
-      </TouchableOpacity>
+         
           </View>
         
         }

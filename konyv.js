@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, FlatList, ActivityIndicator, Text, View, Image , TouchableOpacity , Modal} from 'react-native';
 import { color } from 'react-native-reanimated';
 
-const ipcim="192.168.1.118";
+const ipcim="192.168.1.207";
 
 export default class Tipusok extends React.Component {
 
@@ -121,7 +121,7 @@ export default class Tipusok extends React.Component {
   }
 
   componentDidMount(){
-    alert("hello")
+    //alert("hello")
     
     return fetch('http://'+ipcim+':3000/konyv')
       .then((response) => response.json())
@@ -134,7 +134,7 @@ export default class Tipusok extends React.Component {
         }, function(){
 
         });
-        alert(JSON.stringify(this.state.dataSource))
+       // alert(JSON.stringify(this.state.dataSource))
       })
       .catch((error) =>{
         console.error(error);
@@ -187,8 +187,7 @@ export default class Tipusok extends React.Component {
 
           <View >
           <Text style={{color:"purple",fontSize:28,textAlign:"center",marginTop:5,marginBottom:5}}   >{item.konyv_nev} </Text>
-          <Text style={{color:"purple",fontSize:20,textAlign:"center",marginTop:5,marginBottom:5}}   >{item.konyvfajta_kepek} </Text>
-        
+          
            
           <TouchableOpacity 
               onPress={() => {

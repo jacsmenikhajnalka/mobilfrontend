@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, TextInput, View } from 'react-native';
-
+const ipcim="192.168.1.207";
 const kapcsolat = () => {
 
   return (
@@ -10,6 +10,7 @@ const kapcsolat = () => {
       width: '100%', height: 50, backgroundColor: 'powderblue'
     }} >
 
+
      <Text style={{alignSelf: 'center', fontSize:30 }}>Kezdőlap</Text>
 
     </View>
@@ -17,6 +18,7 @@ const kapcsolat = () => {
     <View style={{
       width: '100%', height: 100, backgroundColor: 'lightblue'
     }} >
+      <Text style={{alignSelf: 'center', fontSize:30 }}>Záródolgozat</Text>
       
        </View>
     <View style={{
