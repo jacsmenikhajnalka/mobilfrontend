@@ -2,8 +2,8 @@ import React from 'react';
 import {StyleSheet, FlatList, ActivityIndicator, Text, View, Image , TouchableOpacity , Modal} from 'react-native';
 import { color } from 'react-native-reanimated';
 
-const ipcim="192.168.1.207";
-
+//const ipcim="192.168.1.207";
+const IP = require('./ipcim.js');
 export default class Tipusok extends React.Component {
 
   constructor(props){
@@ -23,7 +23,7 @@ export default class Tipusok extends React.Component {
       bevitel1:szam
     }
 
-  fetch('http://'+ipcim+':3000/szavazatfelvitel',{
+  fetch('http://'+IP.ipcim+':3000/szavazatfelvitel',{
       method: "POST",
       body: JSON.stringify(bemenet),
       headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -40,7 +40,7 @@ export default class Tipusok extends React.Component {
       bevitel1:szam
     }
 
-  fetch('http://'+ipcim+':3000/szavazatfelvitel2',{
+  fetch('http://'+IP.ipcim+':3000/szavazatfelvitel2',{
       method: "POST",
       body: JSON.stringify(bemenet),
       headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -57,7 +57,7 @@ export default class Tipusok extends React.Component {
       bevitel1:szam
     }
 
-  fetch('http://'+ipcim+':3000/szavazatfelvitel3',{
+  fetch('http://'+IP.ipcim+':3000/szavazatfelvitel3',{
       method: "POST",
       body: JSON.stringify(bemenet),
       headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -74,7 +74,7 @@ export default class Tipusok extends React.Component {
       bevitel1:szam
     }
 
-  fetch('http://'+ipcim+':3000/szavazatfelvitel4',{
+  fetch('http://'+IP.ipcim+':3000/szavazatfelvitel4',{
       method: "POST",
       body: JSON.stringify(bemenet),
       headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -91,7 +91,7 @@ export default class Tipusok extends React.Component {
       bevitel1:szam
     }
 
-  fetch('http://'+ipcim+':3000/szavazatfelvitel5',{
+  fetch('http://'+IP.ipcim+':3000/szavazatfelvitel5',{
       method: "POST",
       body: JSON.stringify(bemenet),
       headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -108,7 +108,7 @@ export default class Tipusok extends React.Component {
       bevitel1:szam
     }
 
-  fetch('http://'+ipcim+':3000/szavazatfelvitel6',{
+  fetch('http://'+IP.ipcim+':3000/szavazatfelvitel6',{
       method: "POST",
       body: JSON.stringify(bemenet),
       headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -123,7 +123,7 @@ export default class Tipusok extends React.Component {
   componentDidMount(){
     //alert("hello")
     
-    return fetch('http://'+ipcim+':3000/konyv')
+    return fetch('http://'+IP.ipcim+':3000/konyv')
       .then((response) => response.json())
       .then((responseJson) => {
 
@@ -195,7 +195,7 @@ export default class Tipusok extends React.Component {
               this.setState({konyvdata:item})
 
               }}>
-          <Image  source={{uri:'http://'+ipcim+':3000/'+item.konyv_kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />    
+          <Image  source={{uri:'http://'+IP.ipcim+':3000/'+item.konyv_kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />    
           </TouchableOpacity>
 
           <TouchableOpacity

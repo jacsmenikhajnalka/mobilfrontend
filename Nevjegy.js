@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, TextInput, View } from 'react-native';
-const ipcim="192.168.1.207";
+//const ipcim="192.168.1.207";
+const IP = require('./ipcim.js');
 const kapcsolat = () => {
 
   return (
